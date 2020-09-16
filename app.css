@@ -19,6 +19,9 @@ h1 {
   height: 300px;
 }
 
-button{
-
+.js-start-button{
+  display: flex;
+  width: 100x;
+  margin: 0;
 }
+

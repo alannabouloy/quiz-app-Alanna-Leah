@@ -13,19 +13,116 @@
   </head>
 
   <body>
-    <header>
-      <h1 class="heading">Welcom to This Quiz</h1>
-    </header>
-    <main>
-      <div class="text-box">
-        <p>Welcome message to quiz and basic instructions</p>
-        <form id="js-start-form">
+    <!--Intro Page HTML-->
+    <section class="intro">
+      <header>
+        <h1 class="heading">Welcom to This Quiz</h1>
+      </header>
+      <main>
+        <div class="text-box">
+          <p>Welcome message to quiz and basic instructions</p>
+        </div>
+        <div class='start-button'>
+          <form id="js-start-form">
+            <div>
+              <button id="js-start-button">Start Quiz!</button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </section>
+
+    <!--Question Page HTML-->
+    <section class="question">
+      <header>
+        <h1 class="heading">Question Number Goes Here</h1>
+      </header>
+      <main>
+        <div class="text-box">
+          <p>Question text goes here</p>
           <div>
-            <button id="js-start-button">Start Quiz!</button>
+            <form id="js-question-form">
+              <div>
+                <input
+                  type="radio"
+                  id="answer-1"
+                  name="answer"
+                  value="answer-1"
+                />
+                <label for="answer-1">Answer One</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="answer-2"
+                  name="answer"
+                  value="answer-2"
+                />
+                <label for="answer-2">Answer Two</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="answer-3"
+                  name="answer"
+                  value="answer-3"
+                />
+                <label for="answer-3">Answer Three</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="answer-4"
+                  name="answer"
+                  value="answer-4"
+                />
+                <label for="answer-4">Answer Four</label>
+              </div>
+              <div>
+                <input
+                  id="js-submit-answer-button"
+                  type="submit"
+                  value="Submit Answer"
+                />
+              </div>
+            </form>
+            <div class='score'>
+                <p>Current Score: 0 incorrect 0 correct</p>
+            </div>
           </div>
-        </form>
-      </div>
-    </main>
+        </div>
+      </main>
+    </section>
+
+    <section class="question-submitted">
+        <header>
+            <h1>Question Number Goes Here</h1>
+        </header>
+        <main>
+            <div>
+                <p>Question text goes here</p>
+                <ul>
+                    <li>Answer One</li>
+                    <li class = "chosen-answer">Answer Two</li>
+                    <li>Answer Three</li>
+                    <li>Answer Four</li>
+                </ul>
+            </div>
+            <div>
+                <form>
+                    <button class="js-next-question">Next Question</button>
+                </form>
+                <div class='score'>
+                    <p>Current Score: 0 incorrect  1 correct</p>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!--Submitted Question Page HTML-->
+
+    <!--Results Page HTML-->
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.js"
       crossorigin="anonymous"
