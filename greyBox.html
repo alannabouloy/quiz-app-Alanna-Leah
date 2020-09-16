@@ -22,7 +22,7 @@
         <div class="text-box">
           <p>Welcome message to quiz and basic instructions</p>
         </div>
-        <div class='start-button'>
+        <div class="start-button">
           <form id="js-start-form">
             <div>
               <button id="js-start-button">Start Quiz!</button>
@@ -38,10 +38,10 @@
         <h1 class="heading">Question Number Goes Here</h1>
       </header>
       <main>
-        <div class="text-box">
-          <p>Question text goes here</p>
-          <div>
-            <form id="js-question-form">
+        <div>
+          <form id="js-question-form">
+            <div class="text-box">
+              <p>Question text goes here</p>
               <div>
                 <input
                   type="radio"
@@ -78,45 +78,45 @@
                 />
                 <label for="answer-4">Answer Four</label>
               </div>
-              <div>
-                <input
-                  id="js-submit-answer-button"
-                  type="submit"
-                  value="Submit Answer"
-                />
-              </div>
-            </form>
-            <div class='score'>
-                <p>Current Score: 0 incorrect 0 correct</p>
             </div>
+            <div>
+              <input
+                id="js-submit-answer-button"
+                type="submit"
+                value="Submit Answer"
+              />
+            </div>
+          </form>
+          <div class="score">
+            <p>Current Score: 0 incorrect 0 correct</p>
           </div>
         </div>
       </main>
     </section>
 
     <section class="question-submitted">
-        <header>
-            <h1>Question Number Goes Here</h1>
-        </header>
-        <main>
-            <div>
-                <p>Question text goes here</p>
-                <ul>
-                    <li>Answer One</li>
-                    <li class = "chosen-answer">Answer Two</li>
-                    <li>Answer Three</li>
-                    <li>Answer Four</li>
-                </ul>
-            </div>
-            <div>
-                <form>
-                    <button class="js-next-question">Next Question</button>
-                </form>
-                <div class='score'>
-                    <p>Current Score: 0 incorrect  1 correct</p>
-                </div>
-            </div>
-        </main>
+      <header>
+        <h1>Question Number Goes Here</h1>
+      </header>
+      <main>
+        <div class='text-box'>
+          <p>Question text goes here</p>
+          <ul>
+            <li>Answer One</li>
+            <li class="chosen-answer">Answer Two</li>
+            <li>Answer Three</li>
+            <li>Answer Four</li>
+          </ul>
+        </div>
+        <div>
+          <form>
+            <button class="js-next-question">Next Question</button>
+          </form>
+          <div class="score">
+            <p>Current Score: 0 incorrect 1 correct</p>
+          </div>
+        </div>
+      </main>
     </section>
 
     <!--Submitted Question Page HTML-->
