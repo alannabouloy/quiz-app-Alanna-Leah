@@ -95,6 +95,9 @@
       </main>
     </section>
 
+    <!--Submitted Question Page HTML-->
+
+
     <section class="question-submitted">
       <header>
         <h1>Question Number Goes Here</h1>
@@ -104,14 +107,14 @@
           <p>Question text goes here</p>
           <ul>
             <li>Answer One</li>
-            <li class="chosen-answer">Answer Two</li>
+            <li><span class='user-answer'>Answer Two</span></li>
             <li>Answer Three</li>
             <li>Answer Four</li>
           </ul>
         </div>
         <div>
-          <form>
-            <button class="js-next-question">Next Question</button>
+          <form id="js-next-question">
+            <button id="js-next-button">Next Question</button>
           </form>
           <div class="score">
             <p>Current Score: 0 incorrect 1 correct</p>
@@ -120,9 +123,26 @@
       </main>
     </section>
 
-    <!--Submitted Question Page HTML-->
 
     <!--Results Page HTML-->
+    <section class='results'>
+        <header>
+            <h1>Your Results!</h1>
+        </header>
+        <div class='text-box'>
+            <div class='score'>
+                <h2>5/5 Correct</h2>
+            </div>
+            <div>
+                <p>Information about your score and what it means.</p>
+            </div>
+            <div class='try-again'>
+                <form id="js-try-again">
+                    <button id="js-try-again-button">Try Again!</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.js"
