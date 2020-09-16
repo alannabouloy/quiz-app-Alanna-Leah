@@ -6,3 +6,22 @@
   * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
   *
 */
+
+h1 {
+  display: flex;
+  border: solid;
+  justify-content: center;
+}
+
+.text-box{
+  border: solid;
+  font-size: 15px;
+  height: 300px;
+}
+
+.js-start-button{
+  display: flex;
+  width: 100x;
+  margin: 0;
+}
+
