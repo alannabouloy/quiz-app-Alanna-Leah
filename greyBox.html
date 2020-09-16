@@ -8,7 +8,8 @@
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
       rel="stylesheet"
-      type="text/css"/>
+      type="text/css"
+    />
     <link href="app.css" rel="stylesheet" type="text/css" />
   </head>
 
@@ -79,7 +80,7 @@
                 <label for="answer-4">Answer Four</label>
               </div>
             </div>
-            <div>
+            <div class="button">
               <input
                 id="js-submit-answer-button"
                 type="submit"
@@ -96,24 +97,25 @@
 
     <!--Submitted Question Page HTML-->
 
-
     <section class="question-submitted">
       <header>
         <h1>Question Number Goes Here</h1>
       </header>
       <main>
-        <div class='text-box'>
+        <div class="text-box">
           <p>Question text goes here</p>
           <ul>
             <li>Answer One</li>
-            <li><span class='user-answer'>Answer Two</span></li>
+            <li><span class="user-answer">Answer Two</span></li>
             <li>Answer Three</li>
             <li>Answer Four</li>
           </ul>
         </div>
         <div>
           <form id="js-next-question">
-            <button id="js-next-button">Next Question</button>
+            <div class="button">
+              <button id="js-next-button">Next Question</button>
+            </div>
           </form>
           <div class="score">
             <p>Current Score: 0 incorrect 1 correct</p>
@@ -122,25 +124,24 @@
       </main>
     </section>
 
-
     <!--Results Page HTML-->
-    <section class='results'>
-        <header>
-            <h1>Your Results!</h1>
-        </header>
-        <div class='text-box'>
-            <div class='score'>
-                <h2>5/5 Correct</h2>
-            </div>
-            <div>
-                <p>Information about your score and what it means.</p>
-            </div>
-            <div class='try-again'>
-                <form id="js-try-again">
-                    <button id="js-try-again-button">Try Again!</button>
-                </form>
-            </div>
+    <section class="results">
+      <header>
+        <h1>Your Results!</h1>
+      </header>
+      <div class="text-box">
+        <div class="score">
+          <h2>5/5 Correct</h2>
         </div>
+        <div>
+          <p>Information about your score and what it means.</p>
+        </div>
+        <div class="try-again">
+          <form id="js-try-again">
+            <button id="js-try-again-button">Try Again!</button>
+          </form>
+        </div>
+      </div>
     </section>
 
     <script
