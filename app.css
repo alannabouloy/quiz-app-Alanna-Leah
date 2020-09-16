@@ -7,21 +7,43 @@
   *
 */
 
+*{box-sizing: border-box;}
+
+
 h1 {
   display: flex;
   border: solid;
   justify-content: center;
 }
 
+.start-button{
+  text-align: center;
+}
+
+.button{
+  text-align:center;
+}
+
+.list{
+  text-align: center;
+  width: 180px;
+  margin: auto;
+}
+
+ul{
+   list-style: none;
+   text-align: left;
+ }
+
+
 .text-box{
   border: solid;
   font-size: 15px;
   height: 300px;
+  text-align: center;
 }
 
-.js-start-button{
-  display: flex;
-  width: 100x;
-  margin: 0;
+.intro .question .question-submitted{
+  text-align: center;
 }
 
