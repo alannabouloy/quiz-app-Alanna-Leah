@@ -8,35 +8,16 @@
 const store = {
   // 5 or more questions are required
   questions: [
-    { 
-      number: 1,
-      question: 'What is the answer?',
-      answers: ['A', 'B', 'C', 'D'],
-      correctAnswer: 'A',
+    {
+      question: 'What color is broccoli?',
+      answers: ['red', 'orange', 'pink', 'green'],
+      correctAnswer: 'green',
     },
     {
-      number: 2,
-      question: 'What is the answer?',
-      answers: ['A', 'B', 'C', 'D'],
-      correctAnswer: 'B',
+      question: 'What is the current year?',
+      answers: ['1970', '2015', '2019', '2005'],
+      correctAnswer: '2019',
     },
-    {
-      number: 3,
-      question: 'What is the answer?',
-      answers: ['A', 'B', 'C', 'D'],
-      correctAnswer: 'C',
-    },
-    { 
-      number: 4,
-      question: 'What is the answer?',
-      answers: ['A', 'B', 'C', 'D'],
-      correctAnswer: 'D',
-    },
-    {
-      number: 5,
-      question: 'What is the answer?',
-      answers: ['A', 'B', 'C', 'D'],
-      correctAnswer: 'A',},
   ],
   quizStarted: false,
   questionNumber: 0,
@@ -77,50 +58,62 @@ const store = {
 // These functions return HTML templates
 function introTemplate(){
   //html for intro page
+  console.log('introTemplate ran')
 }
 
 function questionTemplate(question){
 //switch case of question
 //question page html
+console.log('questionTemplate ran')
 }
 
 function submittedQuestionTemplate(question, answerGiven, currentScore){
   //question answer html
+  console.log('renderIntroPage ran')
 }
 
 function results(finalScore, finalMessage){
   //results html
+  console.log('submittedQuestionTemplate ran')
 }
 /********** RENDER FUNCTION(S) **********/
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
+
 function renderIntroPage(){
   //insert correct HTML
+  console.log('renderIntroPage ran')
 }
 function renderQuestionPage(question){
   //render correct question page
+  console.log('renderQuestionPage ran')
 }
 function renderAnswerPage(question, answer){
   //render correct answer page
+  console.log('renderAnswerPage ran')
 }
 function renderResultsPage(score){
   //render page with corect score
+  console.log('renderResultsPage ran')
 }
 
 /**********LOGIC FUNCTIONS ************/
 function changeScore(){
   //access score property in store
   //add 1 if correct
+  console.log('renderIntroPage ran')
 }
 
 function checkAnswer(){
   //compare userAnswer to correctAnswer
   //return true or false
+  console.log('changeScore ran')
 }
 
 function checkQuestion(){
   //check question number
   //return question number
   //if final question return final
+  console.log('checkQuestion ran')
 }
 /********** EVENT HANDLER FUNCTIONS **********/
 
@@ -128,6 +121,7 @@ function checkQuestion(){
 function handleStartQuizClick() {
   //listening for the startQuiz button
   //when clicked render next page
+  console.log('handleStartQuizClick ran')
 }
 
 function handleAnswerSubmit() {
@@ -138,6 +132,7 @@ function handleAnswerSubmit() {
   //render appropriate html (function)
   //change score at bottom (function)
   //deliver answer message (function)
+  console.log('handleAnswerSubmit ran')
 }
 
 function handleNextQuestionClick() {}
@@ -145,12 +140,26 @@ function handleNextQuestionClick() {}
 //check if final question(function)
 //find next question (function) or render last page
 //renders next question page
+console.log('handleNextQuestionClick ran')
 
 function handleRestartQuizClick() {}
 //listen for button click
 //take to intro page
+console.log('handleRestartQuizClick')
 
-function main(){}
+function main(){
+  introTemplate();
+  questionTemplate();
+  renderAnswerPage();
+  renderResultsPage();
+  changeScore();
+  checkAnswer();
+  checkQuestion();
+  handleStartQuizClick();
+  handleAnswerSubmit();
+  handleNextQuestionClick();
+  handleRestartQuizClick();
+}
 
 //the callback function for the entire page
 $(main);
