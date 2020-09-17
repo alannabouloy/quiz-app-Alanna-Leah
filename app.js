@@ -78,7 +78,7 @@ function introTemplate() {
 }
 
 function questionTemplate(questionNum) {
-  /*let questionPage = `<section class="question">
+  let questionPage = `<section class="question">
 <header>
   <h1 class="heading">Question Number Goes Here</h1>
 </header>
@@ -138,8 +138,9 @@ function questionTemplate(questionNum) {
   </div>
 </main>
 </section>`;
-  //question page html*/
+  //question page html
   console.log('questionTemplate ran: returned questionPage');
+  return questionPage;
   //return questionPage;
 }
 
@@ -209,11 +210,12 @@ function renderIntroPage() {
   let introPage = introTemplate();
   $('body').html(introPage);
   console.log('renderIntroPage ran')  //const introPageHtml = introTemplate();
+  //const introPageHtml = introTemplate();
 }
 function renderQuestionPage(questionNum) {
   //render correct question page
-  questionTemplate();
-  console.log('renderQuestionPage ran')
+  $('body').html(questionTemplate(questionNum));
+  console.log('renderQuestionPage ran');
  // const questionPageHtml = quesitonTemplate(0);
 }
 function renderAnswerPage(question, answer) {
@@ -256,10 +258,12 @@ function handleStartQuizClick() {
   //listening for the startQuiz button
   $('#js-start-form').on('click',  '#js-start-button',event =>{
     event.preventDefault();
-    renderQuestionPage();
-  })
+    renderQuestionPage(0);
+  });
   //when clicked render next page
   //console.log('handleStartQuizClick ran');
+  //when clicked render next page
+  console.log('handleStartQuizClick ran');
 }
 
 function handleAnswerSubmit() {
