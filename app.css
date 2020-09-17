@@ -15,7 +15,7 @@ header{
 }
 
 main{
-  margin: 40px;
+  margin: 20px;
 }
 
 
@@ -24,8 +24,14 @@ h1 {
   display: flex;
   border: solid;
   padding: 10px;
+  text-align: center;
 }
 
+h2{
+  font-size: 20px;
+  text-align: center;
+   margin-bottom: 30px;
+}
 p{
   text-align:center;
 }
@@ -40,13 +46,17 @@ p{
 
 .list{
   text-align: center;
-  width: 180px;
   margin: auto;
 }
 
 ul{
    list-style: none;
    text-align: left;
+   padding: 20px;
+ }
+
+ li{
+   margin: 0 0 20px 0;
  }
 
 
