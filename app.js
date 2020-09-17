@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable strict */
 /**
  * Example store structure
@@ -12,11 +13,13 @@ const store = {
       question: 'What color is broccoli?',
       answers: ['red', 'orange', 'pink', 'green'],
       correctAnswer: 'green',
+      submitted: false,
     },
     {
       question: 'What is the current year?',
       answers: ['1970', '2015', '2019', '2005'],
       correctAnswer: '2019',
+      submitted: false,
     },
   ],
   quizStarted: false,
@@ -125,11 +128,8 @@ function questionTemplate(questionNum) {
         </div>
       </div>
       <div class="button">
-        <input
-          id="js-submit-answer-button"
-          type="submit"
-          value="Submit Answer"
-        />
+        <input type="submit" 
+        value = "Submit Answer">
       </div>
     </form>
     <div class="score">
@@ -205,31 +205,37 @@ function resultsTemplate(finalScore, finalMessage) {
 /********** RENDER FUNCTION(S) **********/
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
 
-function renderIntroPage() {
-  //insert correct HTML
-  let introPage = introTemplate();
-  $('body').html(introPage);
-  console.log('renderIntroPage ran')  //const introPageHtml = introTemplate();
-  //const introPageHtml = introTemplate();
-}
-function renderQuestionPage(questionNum) {
-  //render correct question page
-  $('body').html(questionTemplate(questionNum));
-  console.log('renderQuestionPage ran');
- // const questionPageHtml = quesitonTemplate(0);
-}
-function renderAnswerPage(question, answer) {
-  //render correct answer page
-  answerTemplate();
-  console.log('renderAnswerPage ran')
-  //const submittedQuestionPageHtml = submittedQuesitonTemplate(question, 'correct', store.score);
-}
-function renderResultsPage(score) {
-  //render page with corect score
-  resultsTemplate();
-  console.log('renderResultsPage ran')
-  //const resultsPageHtml = resultsTemplate(score);
+function render(){
+  
+  //check if quiz has been started
+  if(!store.quizStarted){
+    $('body').html(introTemplate);
+    console.log('rendered Intro Page');
+  }else{
+    let questionNum = checkQuestion();
+    if(questionNum === store.questions.length - 1){
+      if(store.questions[questionNum].submitted){
+        $('body').html(resultsTemplate);
+      }else{
+        $('body').html(questionTemplate(questionNum));
+      }
+    }else{
+      if(store.questions[questionNum].submitted){
+        $('body').html(answerTemplate);
+      }else{
+        $('body').html(questionTemplate(questionNum));
+      }
+    }
+  }
+  //render start page if not
+  //check what question
+  //check if question submitted
+  //render question or answer page
+  //check if quiz is finished 
+  //render results page
 
+
+  console.log('render function ran');
 }
 
 /**********LOGIC FUNCTIONS ************/
@@ -242,6 +248,7 @@ function changeScore() {
 function checkAnswer() {
   //compare userAnswer to correctAnswer
   //return true or false
+
   console.log('changeScore ran');
 }
 
@@ -259,7 +266,9 @@ function handleStartQuizClick() {
   //listening for the startQuiz button
   $('#js-start-form').on('click',  '#js-start-button',event =>{
     event.preventDefault();
-    renderQuestionPage(0);
+    store.quizStarted = true;
+    render();
+    console.log(store.quizStarted);
   });
   //when clicked render next page
   //console.log('handleStartQuizClick ran');
@@ -267,16 +276,23 @@ function handleStartQuizClick() {
   console.log('handleStartQuizClick ran');
 }
 
-function handleAnswerSubmit() {
+/*function handleAnswerSubmit() {
   //listens for submit button
-  $("#js-question-form").on('click', '#js-submit-answer-button', event =>{
+  $('body').on('submit', '#js-question-form',  event =>{
     event.preventDefault();
-    checkQuestion();
-    checkAnswer();
-    changeScore();
+    let questionNum = checkQuestion();
+    //let answer = $(#js-)
+    if(answer === store.questions[questionNum].correctAnswer){
+      changeScore();
+      renderAnswerPage(questionNum, answer, 'correct');
+    }else {
+      renderAnswerPage(questionNum, answer, 'incorrect');
+    }
+
+    
     renderAnswerPage();
     console.log('handleAnswerSubmit ran');
-  })
+  });
   //it has to locate which radio button was clicked (create function)
   //add info to store
   //check if answer is correct
@@ -284,14 +300,13 @@ function handleAnswerSubmit() {
   //change score at bottom (function)
   //deliver answer message (function)
   //console.log('handleAnswerSubmit ran');
-}
+}*/
 
 function handleNextQuestionClick() {}
 //listens for button click
 //check if final question(function)
 //find next question (function) or render last page
 //renders next question page
-renderResultsPage();
 console.log('handleNextQuestionClick ran');
 
 function handleRestartQuizClick() {}
@@ -300,7 +315,7 @@ function handleRestartQuizClick() {}
 console.log('handleRestartQuizClick');
 
 function main() {
-  renderIntroPage();
+  render();
   handleStartQuizClick();
   handleAnswerSubmit();
   handleNextQuestionClick();
