@@ -208,8 +208,7 @@ function renderIntroPage() {
   //insert correct HTML
   let introPage = introTemplate();
   $('body').html(introPage);
-  console.log('renderIntroPage ran')
-  //const introPageHtml = introTemplate();
+  console.log('renderIntroPage ran')  //const introPageHtml = introTemplate();
 }
 function renderQuestionPage(questionNum) {
   //render correct question page
@@ -255,9 +254,12 @@ function checkQuestion() {
 // These functions handle events (submit, click, etc)
 function handleStartQuizClick() {
   //listening for the startQuiz button
+  $('#js-start-form').on('click',  '#js-start-button',event =>{
+    event.preventDefault();
+    renderQuestionPage();
+  })
   //when clicked render next page
-  renderQuestionPage();
-  console.log('handleStartQuizClick ran');
+  //console.log('handleStartQuizClick ran');
 }
 
 function handleAnswerSubmit() {
