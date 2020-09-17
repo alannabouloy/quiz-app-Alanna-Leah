@@ -93,11 +93,11 @@ const store = {
 function introTemplate() {
   let introPage = `<section class="intro">
   <header>
-    <h1 class="heading">Welcome to This Quiz</h1>
+    <h1 class="heading">Fun Fact Travel Quiz</h1>
   </header>
   <main>
     <div class="text-box">
-      <p>Welcome message to quiz and basic instructions</p>
+      <p>One of the best parts of travel is getting to learn fun facts about the places you visit. Take our quiz and select the fun fact that you think goes with each city. Let's see what you know! </p>
     </div>
     <div class="start-button">
       <form id="js-start-form">
