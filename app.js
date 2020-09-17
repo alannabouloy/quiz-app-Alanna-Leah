@@ -73,7 +73,7 @@ function introTemplate() {
 function questionTemplate(questionNum) {
   let questionPage = `<section class="question">
 <header>
-  <h1 class="heading">Question Number Goes Here</h1>
+  <h1 class="heading">Question ${questionNum + 1} / 5 </h1>
 </header>
 <main>
   <div>
@@ -85,6 +85,7 @@ function questionTemplate(questionNum) {
             type="radio"
             id="answer-1"
             name="answer"
+            required
             value="${store.questions[questionNum].answers[0]}"
           />
           <label for="answer-1">${store.questions[questionNum].answers[0]}</label>
@@ -123,7 +124,7 @@ function questionTemplate(questionNum) {
       </div>
     </form>
     <div class="score">
-      <p>Current Score: 0 incorrect 0 correct</p>
+      <p>Current Score: ${getScore()}/ 5</p>
     </div>
   </div>
 </main>
@@ -138,7 +139,7 @@ function answerTemplate(questionNum, answerResult, currentScore) {
   //question answer html
   let answerPage = `<section class="question-submitted">
   <header>
-    <h1>Question Number ${questionNum + 1}</h1>
+    <h1>Question Number ${questionNum + 1} / 5</h1>
     <h2>You got that question ${answerResult}!</h2>
   </header>
   <main>
@@ -160,7 +161,7 @@ function answerTemplate(questionNum, answerResult, currentScore) {
         </div>
       </form>
       <div class="score">
-        <p>Current Score: ${currentScore}</p>
+        <p>Current Score: ${currentScore} / 5</p>
       </div>
     </div>
   </main>
@@ -233,7 +234,7 @@ function render(){
 
 /**********LOGIC FUNCTIONS ************/
 function changeScore() {
-  store.score =+ 1;
+  store.score += 1;
   //access score property in store
   //add 1 if correct
   console.log('renderIntroPage ran');
