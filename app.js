@@ -82,18 +82,22 @@ function results(finalScore, finalMessage){
 function renderIntroPage(){
   //insert correct HTML
   console.log('renderIntroPage ran')
+  const introPageHtml = introTemplate();
 }
 function renderQuestionPage(question){
   //render correct question page
   console.log('renderQuestionPage ran')
+  const questionPageHtml = quesitonTemplate();
 }
 function renderAnswerPage(question, answer){
   //render correct answer page
   console.log('renderAnswerPage ran')
+  const submittedQuestionPageHtml = submittedQuesitonTemplate();
 }
 function renderResultsPage(score){
   //render page with corect score
   console.log('renderResultsPage ran')
+  const resultsPageHtml = resultsTemplate();
 }
 
 /**********LOGIC FUNCTIONS ************/
