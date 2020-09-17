@@ -240,17 +240,27 @@ function render(){
 
 /**********LOGIC FUNCTIONS ************/
 function changeScore() {
+  store.score =+ 1;
   //access score property in store
   //add 1 if correct
   console.log('renderIntroPage ran');
 }
 
-function checkAnswer() {
+function checkAnswer(questionNumber, answer) {
+  if(answer === store.questions[questionNum].correctAnswer){
+    changeScore();
+    return true;
   //compare userAnswer to correctAnswer
   //return true or false
 
   console.log('changeScore ran');
+};
 }
+
+function getAnswer(){
+  return $('input [name = "answer"]: checked').val();
+}
+
 
 function checkQuestion() {
   //check question number
@@ -276,21 +286,12 @@ function handleStartQuizClick() {
   console.log('handleStartQuizClick ran');
 }
 
-/*function handleAnswerSubmit() {
+function handleAnswerSubmit() {
   //listens for submit button
   $('body').on('submit', '#js-question-form',  event =>{
     event.preventDefault();
     let questionNum = checkQuestion();
-    //let answer = $(#js-)
-    if(answer === store.questions[questionNum].correctAnswer){
-      changeScore();
-      renderAnswerPage(questionNum, answer, 'correct');
-    }else {
-      renderAnswerPage(questionNum, answer, 'incorrect');
-    }
-
-    
-    renderAnswerPage();
+    let answer = getAnswer;
     console.log('handleAnswerSubmit ran');
   });
   //it has to locate which radio button was clicked (create function)
@@ -300,7 +301,7 @@ function handleStartQuizClick() {
   //change score at bottom (function)
   //deliver answer message (function)
   //console.log('handleAnswerSubmit ran');
-}*/
+}
 
 function handleNextQuestionClick() {}
 //listens for button click
