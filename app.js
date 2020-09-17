@@ -171,7 +171,7 @@ function answerTemplate(questionNum, answerResult, currentScore) {
 
 function resultsTemplate(finalScore, finalMessage) {
   //results html
-  /*let resultsPage = `<section class="results">
+  let resultsPage = `<section class="results">
   <header>
     <h1>Your Results!</h1>
   </header>
@@ -188,9 +188,9 @@ function resultsTemplate(finalScore, finalMessage) {
       </form>
     </div>
   </div>
-</section>`;*/
+</section>`
   console.log('resultsTemplate ran, returned resultsPage');
-  //return resultsPage;
+  return resultsPage;
 }
 /********** RENDER FUNCTION(S) **********/
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
@@ -208,7 +208,7 @@ function render(){
   }else{
     if(questionNum === store.questions.length - 1){
       if(store.questions[questionNum].submitted){
-        $('body').html(resultsTemplate);
+        $('body').html(resultsTemplate(score, 'This is the final message'));
       }else{
         $('body').html(questionTemplate(questionNum));
       }
@@ -331,15 +331,32 @@ function handleAnswerSubmit() {
   //console.log('handleAnswerSubmit ran');
 }
 
-function handleNextQuestionClick() {}
+function handleNextQuestionClick() {
+  $('body').on('click', '#js-next-button', event =>{
+    event.preventDefault();
+    render();
+  })
+  console.log('handleNextQuestionClick ran');
+}
 //listens for button click
 //check if final question(function)
 //find next question (function) or render last page
 //renders next question page
-console.log('handleNextQuestionClick ran');
+
 
 function handleRestartQuizClick() {}
 //listen for button click
+$('body').on('click', '#js-try-again-button', event =>{
+  event.preventDefault();
+  store.quizStarted = false;
+  store.score = 0;
+  store.questionNumber = 0;
+  store.questions.forEach(question =>{
+    question.submitted = false;
+    question.answeredCorrect = false;
+  });
+  render();
+})
 //take to intro page
 console.log('handleRestartQuizClick');
 
