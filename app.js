@@ -8,16 +8,35 @@
 const store = {
   // 5 or more questions are required
   questions: [
-    {
-      question: 'What color is broccoli?',
-      answers: ['red', 'orange', 'pink', 'green'],
-      correctAnswer: 'green',
+    { 
+      number: 1,
+      question: 'What is the answer?',
+      answers: ['A', 'B', 'C', 'D'],
+      correctAnswer: 'A',
     },
     {
-      question: 'What is the current year?',
-      answers: ['1970', '2015', '2019', '2005'],
-      correctAnswer: '2019',
+      number: 2,
+      question: 'What is the answer?',
+      answers: ['A', 'B', 'C', 'D'],
+      correctAnswer: 'B',
     },
+    {
+      number: 3,
+      question: 'What is the answer?',
+      answers: ['A', 'B', 'C', 'D'],
+      correctAnswer: 'C',
+    },
+    { 
+      number: 4,
+      question: 'What is the answer?',
+      answers: ['A', 'B', 'C', 'D'],
+      correctAnswer: 'D',
+    },
+    {
+      number: 5,
+      question: 'What is the answer?',
+      answers: ['A', 'B', 'C', 'D'],
+      correctAnswer: 'A',},
   ],
   quizStarted: false,
   questionNumber: 0,
