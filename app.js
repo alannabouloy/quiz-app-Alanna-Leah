@@ -39,15 +39,43 @@ const store = {
 
 // These functions return HTML templates
 
-/********** RENDER FUNCTION(S) **********/
 
+
+
+
+
+
+
+/********** RENDER FUNCTION(S) **********/
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
+
+
+
+
+
+
 
 /********** EVENT HANDLER FUNCTIONS **********/
 
 // These functions handle events (submit, click, etc)
-function handleAnswersSubmitted(){
-  
+function handleStartQuizClick(){
+ //listening for the startQuiz button
+ //when clicked render next page
 }
 
-function handle
+function handleAnswerSubmit(){
+//listens for submit button
+//it has to locate which radio button was clicked
+//
+}
+
+function handleNextQuestionClick(){
+
+}
+
+function handleRestartQuizClick(){
+
+}
+
+//the callback function for the entire page
+$();
