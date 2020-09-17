@@ -46,3 +46,8 @@ const store = {
 /********** EVENT HANDLER FUNCTIONS **********/
 
 // These functions handle events (submit, click, etc)
+function handleAnswersSubmitted(){
+  
+}
+
+function handle
