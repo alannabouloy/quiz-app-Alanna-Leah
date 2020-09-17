@@ -247,6 +247,7 @@ function checkAnswer() {
 
 function checkQuestion() {
   //check question number
+  return store.questionNumber;
   //return question number
   //if final question return final
   console.log('checkQuestion ran');
@@ -268,14 +269,21 @@ function handleStartQuizClick() {
 
 function handleAnswerSubmit() {
   //listens for submit button
+  $("#js-question-form").on('click', '#js-submit-answer-button', event =>{
+    event.preventDefault();
+    checkQuestion();
+    checkAnswer();
+    changeScore();
+    renderAnswerPage();
+    console.log('handleAnswerSubmit ran');
+  })
   //it has to locate which radio button was clicked (create function)
   //add info to store
   //check if answer is correct
   //render appropriate html (function)
   //change score at bottom (function)
   //deliver answer message (function)
-  renderAnswerPage();
-  console.log('handleAnswerSubmit ran');
+  //console.log('handleAnswerSubmit ran');
 }
 
 function handleNextQuestionClick() {}
@@ -296,10 +304,7 @@ function main() {
   handleStartQuizClick();
   handleAnswerSubmit();
   handleNextQuestionClick();
-  handleRestartQuizClick();
-  changeScore();
-  checkAnswer();
-  checkQuestion(); 
+  handleRestartQuizClick(); 
 }
 
 //the callback function for the entire page
