@@ -9,7 +9,17 @@
 
 *{box-sizing: border-box;}
 
+header{
+  margin: 40px;
+}
+
+main{
+  margin: 40px;
+}
+
+
 h1 {
+  font-size:20px;
   display: flex;
   border: solid;
   justify-content: center;
@@ -17,6 +27,7 @@ h1 {
 
 p{
   text-align:center;
+
 }
 
 .start-button{
@@ -39,9 +50,12 @@ ul{
  }
 
 
+
 .text-box{
+
   border: solid;
   font-size: 15px;
+  width: 100%;
   height: 300px;
   text-align: center;
 }
