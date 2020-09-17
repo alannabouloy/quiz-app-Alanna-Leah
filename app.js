@@ -318,6 +318,7 @@ function handleAnswerSubmit() {
     recordResult(questionNum, checkAnswer(questionNum, answer));
     store.questions[questionNum].submitted = true;
     render();
+    store.questionNumber += 1;
     
     console.log('handleAnswerSubmit ran');
   });
