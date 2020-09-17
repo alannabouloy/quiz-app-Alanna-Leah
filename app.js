@@ -189,7 +189,7 @@ function resultsTemplate(finalScore, finalMessage) {
       </form>
     </div>
   </div>
-</section>`
+</section>`;
   console.log('resultsTemplate ran, returned resultsPage');
   return resultsPage;
 }
@@ -336,7 +336,7 @@ function handleNextQuestionClick() {
   $('body').on('click', '#js-next-button', event =>{
     event.preventDefault();
     render();
-  })
+  });
   console.log('handleNextQuestionClick ran');
 }
 //listens for button click
@@ -357,7 +357,7 @@ $('body').on('click', '#js-try-again-button', event =>{
     question.answeredCorrect = false;
   });
   render();
-})
+});
 //take to intro page
 console.log('handleRestartQuizClick');
 
