@@ -213,8 +213,10 @@ function answerTemplate(questionNum, answerResult, currentScore) {
   return answerPage;
 }
 
-function resultsTemplate(finalScore, finalMessage) {
+function resultsTemplate() {
   //results html
+  let finalScore = getScore();
+  let finalMessage = createFinalMessage();
   let resultsPage = `<section class="results">
   <header>
     <h1>Your Results!</h1>
@@ -252,7 +254,7 @@ function render(){
   }else{
     if(questionNum === store.questions.length - 1){
       if(store.questions[questionNum].submitted){
-        $('body').html(resultsTemplate(score, 'This is the final message'));
+        $('body').html(resultsTemplate());
       }else{
         $('body').html(questionTemplate(questionNum));
       }
@@ -325,6 +327,22 @@ function correctOrNot(questionNum){
     return 'correct';
   }else{
     return `incorrect; the correct answer was  ${getCorrectAnswer(questionNum)}`;
+  }
+}
+
+function createFinalMessage(){
+  let score = getScore();
+  switch(score){
+  case 0:
+    return 'Ouch! Too bad...maybe try again?';
+  case 1:
+    return 'Well...you tried. Maybe next time...';
+  case 4:
+    return 'Wow! You\'re doing great. Try again for a perfect score!';
+  case 5: 
+    return 'You got all of them correct! You must travel a lot!';
+  default: 
+    return 'Not bad...but you could always do better. Try again!';
   }
 }
 
