@@ -14,29 +14,19 @@ const store = {
       answers: ['red', 'orange', 'pink', 'green'],
       correctAnswer: 'green',
       submitted: false,
+      answeredCorrect: false,
     },
     {
       question: 'What is the current year?',
       answers: ['1970', '2015', '2019', '2005'],
       correctAnswer: '2019',
       submitted: false,
+      answeredCorrect: false,
     },
   ],
   quizStarted: false,
   questionNumber: 0,
   score: 0,
-  userAnswers: [
-    {
-      question: 1,
-      answer: '',
-      correct: false,
-    },
-    {
-      question: 2,
-      answer: '',
-      correct: false,
-    },
-  ],
 };
 
 /**
@@ -146,7 +136,7 @@ function questionTemplate(questionNum) {
 
 function answerTemplate(questionNum, answerResult, currentScore) {
   //question answer html
-  /*let answerPage = `<section class="question-submitted">
+  let answerPage = `<section class="question-submitted">
   <header>
     <h1>Question Number ${questionNum + 1}</h1>
     <h2>You got that question ${answerResult}!</h2>
@@ -174,9 +164,9 @@ function answerTemplate(questionNum, answerResult, currentScore) {
       </div>
     </div>
   </main>
-</section>`;*/
+</section>`;
   console.log('submittedQuestionTemplate ran, returned answerPage');
-  //return answerPage;
+  return answerPage;
 }
 
 function resultsTemplate(finalScore, finalMessage) {
@@ -206,13 +196,16 @@ function resultsTemplate(finalScore, finalMessage) {
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
 
 function render(){
-  
+  let questionNum = checkQuestion();
+  let score = getScore();
+  let questionAnswers = getQuestionAnswers(questionNum);
+  let answeredCorrect = correctOrNot(questionNum);
+
   //check if quiz has been started
   if(!store.quizStarted){
     $('body').html(introTemplate);
     console.log('rendered Intro Page');
   }else{
-    let questionNum = checkQuestion();
     if(questionNum === store.questions.length - 1){
       if(store.questions[questionNum].submitted){
         $('body').html(resultsTemplate);
@@ -221,7 +214,7 @@ function render(){
       }
     }else{
       if(store.questions[questionNum].submitted){
-        $('body').html(answerTemplate);
+        $('body').html(answerTemplate(questionNum,answeredCorrect,score));
       }else{
         $('body').html(questionTemplate(questionNum));
       }
@@ -246,28 +239,58 @@ function changeScore() {
   console.log('renderIntroPage ran');
 }
 
-function checkAnswer(questionNumber, answer) {
+function checkAnswer(questionNum, answer) {
   if(answer === store.questions[questionNum].correctAnswer){
     changeScore();
+    store.questions[questionNum].answeredCorrect = true;
+    console.log('changeScore ran');
     return true;
+  }else{
+    return false;
+  }
   //compare userAnswer to correctAnswer
   //return true or false
-
-  console.log('changeScore ran');
-};
+    
+}
+function recordResult(questionNum, isCorrect){
+  store.questions[questionNum].answerResult = isCorrect;
 }
 
 function getAnswer(){
-  return $('input [name = "answer"]: checked').val();
+  return $('input[name = "answer"]:checked').val();
 }
 
+function getScore(){
+  return store.score;
+}
+
+function getQuestion(questionNum){
+  return store.questions[questionNum].question;
+}
+
+function getCorrectAnswer(questionNum){
+  return store.questions[questionNum].correctAnswer;
+}
+
+function getQuestionAnswers(questionNum){
+  return store.questions[questionNum].answers;
+}
+
+function correctOrNot(questionNum){
+  if(store.questions[questionNum].answeredCorrect){
+    return 'correct';
+  }else{
+    return `incorrect; the correct answer was  ${getCorrectAnswer(questionNum)}`;
+  }
+}
 
 function checkQuestion() {
   //check question number
+  console.log('checkQuestion ran');
   return store.questionNumber;
   //return question number
   //if final question return final
-  console.log('checkQuestion ran');
+  
 }
 /********** EVENT HANDLER FUNCTIONS **********/
 
@@ -291,7 +314,11 @@ function handleAnswerSubmit() {
   $('body').on('submit', '#js-question-form',  event =>{
     event.preventDefault();
     let questionNum = checkQuestion();
-    let answer = getAnswer;
+    let answer = getAnswer(questionNum);
+    recordResult(questionNum, checkAnswer(questionNum, answer));
+    store.questions[questionNum].submitted = true;
+    render();
+    
     console.log('handleAnswerSubmit ran');
   });
   //it has to locate which radio button was clicked (create function)
