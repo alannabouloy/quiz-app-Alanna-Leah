@@ -10,19 +10,62 @@ const store = {
   // 5 or more questions are required
   questions: [
     {
-      question: 'What color is broccoli?',
-      answers: ['red', 'orange', 'pink', 'green'],
-      correctAnswer: 'green',
+      question: 'Choose which fact is true about the city: Paris',
+      answers: ['The famous artist Henri Matisse was born on Rue Lafitte in Paris, France', 
+        'Paris is best known for the culinary masterpiece: the Cheesesteak',
+        'Paris has only one stop sign in the entire city.',
+        'There are 10 Eiffel tower replicas located in cities around the world, including Paris, Texas and one in China.'
+      ],
+      correctAnswer: 'Paris has only one stop sign in the entire city.',
       submitted: false,
       answeredCorrect: false,
     },
     {
-      question: 'What is the current year?',
-      answers: ['1970', '2015', '2019', '2005'],
-      correctAnswer: '2019',
+      question: 'Choose which fact is true about the city: Moscow',
+      answers: ['Stray dogs in Moscow can operate the metro service in order to escape the freezing temperatures outside.',
+        'Moscow is known for its tropical climate and balmy beaches.',
+        'There are twelve identical skyscrapers in Moscow, known as ‘the Twelve Sisters',
+        'Over half of the population claim to have been born in the city.'
+      ],
+      correctAnswer: 'Stray dogs in Moscow can operate the metro service in order to escape the freezing temperatures outside.',
       submitted: false,
       answeredCorrect: false,
     },
+    {
+      question: 'Choose which fact is true about the city: Barcelona',
+      answers: ['Barcelona is home to the largest supercomputer in the world.',
+        'This city had no beaches until 1992, when beaches were put in by the city for the Summer Olympics.',
+        'In Barcelona, the official language is Arabic',
+        'Barcelona is one of two cities in the world to win the Royal Gold Medal for architecture.'
+      ],
+      correctAnswer: 'This city had no beaches until 1992, when beaches were put in by the city for the Summer Olympics.',
+      submitted: false,
+      answeredCorrect: false,
+    },
+    {
+      question: 'Choose which fact is true about the city: Buenos Aires',
+      answers:[
+        'This city is known for being the birthplace of the Waltz',
+        'Buenos Aires has the most bookstores per person of any city in the world',
+        'Buenos Aires is home to the oldest subway system in the world. ',
+        'The famous Casa Rosada (Pink House) where the President of Argentina resides, gets its unique coloring from sheep’s blood.'
+      ],
+      correctAnswer: 'Buenos Aires has the most bookstores per person of any city in the world',
+      submitted: false,
+      answeredCorrect: false,
+    },
+    {
+      question: 'Choose which fact is true about the city: Beijing',
+      answers:[
+        'Beijing is the largest city in China',
+        'Beijing has no airports in the entire city',
+        'Beijing has been the capital of 8 different Chinese governments',
+        'In order to drive in Beijing you first have to win a lottery system.',
+      ],
+      correctAnswer: 'In order to drive in Beijing you first have to win a lottery system.',
+      submitted: false,
+      answeredCorrect: false,
+    }
   ],
   quizStarted: false,
   questionNumber: 0,
