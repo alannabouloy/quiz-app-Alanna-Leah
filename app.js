@@ -1,6 +1,10 @@
+/* eslint-disable strict */
 /**
  * Example store structure
  */
+/*global $*/
+'user strict';
+
 const store = {
   // 5 or more questions are required
   questions: [
@@ -18,7 +22,21 @@ const store = {
   quizStarted: false,
   questionNumber: 0,
   score: 0,
+  userAnswers:[
+    {
+      question: 1,
+      answer: '',
+      correct: false,
+
+    },
+    {
+      question: 2,
+      answer: '',
+      correct: false,
+    }
+  ]
 };
+
 
 /**
  *
@@ -38,44 +56,82 @@ const store = {
 /********** TEMPLATE GENERATION FUNCTIONS **********/
 
 // These functions return HTML templates
+function introTemplate(){
+  //html for intro page
+}
 
+function questionTemplate(question){
+//switch case of question
+//question page html
+}
 
+function submittedQuestionTemplate(question, answerGiven, currentScore){
+  //question answer html
+}
 
-
-
-
-
-
+function results(finalScore, finalMessage){
+  //results html
+}
 /********** RENDER FUNCTION(S) **********/
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
+function renderIntroPage(){
+  //insert correct HTML
+}
+function renderQuestionPage(question){
+  //render correct question page
+}
+function renderAnswerPage(question, answer){
+  //render correct answer page
+}
+function renderResultsPage(score){
+  //render page with corect score
+}
 
+/**********LOGIC FUNCTIONS ************/
+function changeScore(){
+  //access score property in store
+  //add 1 if correct
+}
 
+function checkAnswer(){
+  //compare userAnswer to correctAnswer
+  //return true or false
+}
 
-
-
-
-
+function checkQuestion(){
+  //check question number
+  //return question number
+  //if final question return final
+}
 /********** EVENT HANDLER FUNCTIONS **********/
 
 // These functions handle events (submit, click, etc)
-function handleStartQuizClick(){
- //listening for the startQuiz button
- //when clicked render next page
+function handleStartQuizClick() {
+  //listening for the startQuiz button
+  //when clicked render next page
 }
 
-function handleAnswerSubmit(){
-//listens for submit button
-//it has to locate which radio button was clicked
-//
+function handleAnswerSubmit() {
+  //listens for submit button
+  //it has to locate which radio button was clicked (create function)
+  //add info to store
+  //check if answer is correct
+  //render appropriate html (function)
+  //change score at bottom (function)
+  //deliver answer message (function)
 }
 
-function handleNextQuestionClick(){
+function handleNextQuestionClick() {}
+//listens for button click
+//check if final question(function)
+//find next question (function) or render last page
+//renders next question page
 
-}
+function handleRestartQuizClick() {}
+//listen for button click
+//take to intro page
 
-function handleRestartQuizClick(){
-
-}
+function main(){}
 
 //the callback function for the entire page
-$();
+$(main);
