@@ -74,11 +74,11 @@ function introTemplate() {
 </section>`;
   //html for intro page
   console.log('introTemplate ran: returned introPage');
-  return introPage;
+  //return introPage;
 }
 
 function questionTemplate(questionNum) {
-  let questionPage = `<section class="question">
+  /*let questionPage = `<section class="question">
 <header>
   <h1 class="heading">Question Number Goes Here</h1>
 </header>
@@ -138,14 +138,14 @@ function questionTemplate(questionNum) {
   </div>
 </main>
 </section>`;
-  //question page html
+  //question page html*/
   console.log('questionTemplate ran: returned questionPage');
-  return questionPage;
+  //return questionPage;
 }
 
-function submittedQuestionTemplate(questionNum, answerResult, currentScore) {
+function answerTemplate(questionNum, answerResult, currentScore) {
   //question answer html
-  let answerPage = `<section class="question-submitted">
+  /*let answerPage = `<section class="question-submitted">
   <header>
     <h1>Question Number ${questionNum + 1}</h1>
     <h2>You got that question ${answerResult}!</h2>
@@ -173,14 +173,14 @@ function submittedQuestionTemplate(questionNum, answerResult, currentScore) {
       </div>
     </div>
   </main>
-</section>`;
+</section>`;*/
   console.log('submittedQuestionTemplate ran, returned answerPage');
-  return answerPage;
+  //return answerPage;
 }
 
 function resultsTemplate(finalScore, finalMessage) {
   //results html
-  let resultsPage = `<section class="results">
+  /*let resultsPage = `<section class="results">
   <header>
     <h1>Your Results!</h1>
   </header>
@@ -197,32 +197,36 @@ function resultsTemplate(finalScore, finalMessage) {
       </form>
     </div>
   </div>
-</section>`;
+</section>`;*/
   console.log('resultsTemplate ran, returned resultsPage');
-  return resultsPage;
+  //return resultsPage;
 }
 /********** RENDER FUNCTION(S) **********/
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
 
 function renderIntroPage() {
   //insert correct HTML
+  introTemplate();
   console.log('renderIntroPage ran')
-  const introPageHtml = introTemplate();
+  //const introPageHtml = introTemplate();
 }
-function renderQuestionPage(question) {
+function renderQuestionPage(questionNum) {
   //render correct question page
+  questionTemplate();
   console.log('renderQuestionPage ran')
-  const questionPageHtml = quesitonTemplate();
+ // const questionPageHtml = quesitonTemplate(0);
 }
 function renderAnswerPage(question, answer) {
   //render correct answer page
+  answerTemplate();
   console.log('renderAnswerPage ran')
-  const submittedQuestionPageHtml = submittedQuesitonTemplate();
+  //const submittedQuestionPageHtml = submittedQuesitonTemplate(question, 'correct', store.score);
 }
 function renderResultsPage(score) {
   //render page with corect score
+  resultsTemplate();
   console.log('renderResultsPage ran')
-  const resultsPageHtml = resultsTemplate();
+  //const resultsPageHtml = resultsTemplate(score);
 
 }
 
@@ -251,6 +255,7 @@ function checkQuestion() {
 function handleStartQuizClick() {
   //listening for the startQuiz button
   //when clicked render next page
+  renderQuestionPage();
   console.log('handleStartQuizClick ran');
 }
 
@@ -262,6 +267,7 @@ function handleAnswerSubmit() {
   //render appropriate html (function)
   //change score at bottom (function)
   //deliver answer message (function)
+  renderAnswerPage();
   console.log('handleAnswerSubmit ran');
 }
 
@@ -270,6 +276,7 @@ function handleNextQuestionClick() {}
 //check if final question(function)
 //find next question (function) or render last page
 //renders next question page
+renderResultsPage();
 console.log('handleNextQuestionClick ran');
 
 function handleRestartQuizClick() {}
@@ -278,17 +285,14 @@ function handleRestartQuizClick() {}
 console.log('handleRestartQuizClick');
 
 function main() {
-  introTemplate();
-  questionTemplate();
-  renderAnswerPage();
-  renderResultsPage();
-  changeScore();
-  checkAnswer();
-  checkQuestion();
+  renderIntroPage();
   handleStartQuizClick();
   handleAnswerSubmit();
   handleNextQuestionClick();
   handleRestartQuizClick();
+  changeScore();
+  checkAnswer();
+  checkQuestion(); 
 }
 
 //the callback function for the entire page
