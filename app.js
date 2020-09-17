@@ -114,7 +114,7 @@ function introTemplate() {
 }
 
 function questionTemplate(questionNum) {
-  let questionPage = `<section class="question">
+  let questionPage = `<section class="question-${questionNum}">
 <header>
   <h1 class="heading">Question ${questionNum + 1} / 5 </h1>
 </header>
@@ -180,7 +180,7 @@ function questionTemplate(questionNum) {
 
 function answerTemplate(questionNum, answerResult, currentScore) {
   //question answer html
-  let answerPage = `<section class="question-submitted">
+  let answerPage = `<section class="question-${questionNum}-submitted">
   <header>
     <h1>Question Number ${questionNum + 1} / 5</h1>
     <h2>You got that question ${answerResult}!</h2>
