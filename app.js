@@ -74,7 +74,7 @@ function introTemplate() {
 </section>`;
   //html for intro page
   console.log('introTemplate ran: returned introPage');
-  //return introPage;
+  return introPage;
 }
 
 function questionTemplate(questionNum) {
@@ -206,7 +206,8 @@ function resultsTemplate(finalScore, finalMessage) {
 
 function renderIntroPage() {
   //insert correct HTML
-  introTemplate();
+  let introPage = introTemplate();
+  $('body').html(introPage);
   console.log('renderIntroPage ran')
   //const introPageHtml = introTemplate();
 }
