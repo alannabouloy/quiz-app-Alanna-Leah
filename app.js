@@ -123,7 +123,7 @@ function questionTemplate(questionNum) {
     <form id="js-question-form">
       <div class="text-box">
         <p>${store.questions[questionNum].question}</p>
-        <div>
+        <div class="radio">
           <input
             type="radio"
             id="answer-1"
@@ -133,7 +133,7 @@ function questionTemplate(questionNum) {
           />
           <label for="answer-1">${store.questions[questionNum].answers[0]}</label>
         </div>
-        <div>
+        <div class="radio"> 
           <input
             type="radio"
             id="answer-2"
@@ -142,7 +142,7 @@ function questionTemplate(questionNum) {
           />
           <label for="answer-2">${store.questions[questionNum].answers[1]}</label>
         </div>
-        <div>
+        <div class="radio">
           <input
             type="radio"
             id="answer-3"
@@ -151,7 +151,7 @@ function questionTemplate(questionNum) {
           />
           <label for="answer-3">${store.questions[questionNum].answers[2]}</label>
         </div>
-        <div>
+        <div class="radio">
           <input
             type="radio"
             id="answer-4"
