@@ -69,6 +69,7 @@ const store = {
   ],
   quizStarted: false,
   questionNumber: 0,
+  finalQuestion: false,
   score: 0,
 };
 
@@ -254,12 +255,8 @@ function render(){
     $('body').html(introTemplate);
     console.log('rendered Intro Page');
   }else{
-    if(questionNum === store.questions.length - 1){
-      if(store.questions[questionNum].submitted){
-        $('body').html(resultsTemplate());
-      }else{
-        $('body').html(questionTemplate(questionNum));
-      }
+    if(store.finalQuestion){
+      $('body').html(resultsTemplate());
     }else{
       if(store.questions[questionNum].submitted){
         $('body').html(answerTemplate(questionNum,answeredCorrect,score));
@@ -382,7 +379,6 @@ function handleAnswerSubmit() {
     recordResult(questionNum, checkAnswer(questionNum, answer));
     store.questions[questionNum].submitted = true;
     render();
-    store.questionNumber += 1;
     
     console.log('handleAnswerSubmit ran');
   });
@@ -398,7 +394,15 @@ function handleAnswerSubmit() {
 function handleNextQuestionClick() {
   $('body').on('click', '#js-next-button', event =>{
     event.preventDefault();
+    let questionNum = checkQuestion();
+    if(questionNum === store.questions.length - 1){
+      store.finalQuestion = true;
+    }else{
+      store.questionNumber += 1;
+    }
+    
     render();
+
   });
   console.log('handleNextQuestionClick ran');
 }
