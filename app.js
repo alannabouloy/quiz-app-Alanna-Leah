@@ -114,7 +114,7 @@ function introTemplate() {
 }
 
 function questionTemplate(questionNum) {
-  let questionPage = `<section class="question-${questionNum}">
+  let questionPage = `<div class="question-${questionNum}">
 <header>
   <h1 class="heading">Question ${questionNum + 1} / 5 </h1>
 </header>
@@ -171,7 +171,7 @@ function questionTemplate(questionNum) {
     </div>
   </div>
 </main>
-</section>`;
+</div>`;
   //question page html
   console.log('questionTemplate ran: returned questionPage');
   return questionPage;

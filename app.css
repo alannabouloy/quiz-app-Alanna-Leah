@@ -9,6 +9,10 @@
 
 *{box-sizing: border-box;}
 
+html, body{
+  margin: 0px;
+}
+
 header{
   display: flex;
   justify-content: center;
@@ -17,53 +21,58 @@ header{
 main{
   margin: 20px;
 }
-body {
-  background-color: cadetblue;
+section{
+  background-image: url('/images/travel-default.jpg');
+  background-size: 700px 900px;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin:auto;
+  margin-bottom: 0px;
 }
 .question-0, .question-0-submitted {
 
   background-image: url('/images/paris-image.jpg');
-  background-size: 100%;
+  background-size: 700px 900px;
   background-repeat: no-repeat;
-  width: 700px;
-  height: 800px;
-  margin: auto;
+  height: 100vh;
+  margin:auto;
+  margin-bottom: 0px;
   
 }
 .question-1, .question-1-submitted{
   background-image: url('/images/moscow-image.jpg');
-  background-size: 100%;
+  background-size: 700px 900px;
   background-repeat: no-repeat;
-  width: 700px;
-  height: 800px;
-  margin: auto;
+  height: 100vh;
+  margin:auto;
+  margin-bottom: 0px;
   
 }
 .question-2, .question-2-submitted{
   background-image: url('/images/barcelona-image.jpg');
-  background-size: 100%;
+  background-size: 700px 900px;
   background-repeat: no-repeat;
-  width: 700px;
-  height: 800px;
-  margin: auto;
+  height: 100vh;
+  margin:auto;
+  margin-bottom: 0px;
   
 }
 .question-3, .question-3-submitted{
   background-image: url('/images/buenos-aires-image.jpg');
-  background-size: 100%;
+  background-size: 700px 900px;
   background-repeat: no-repeat;
-  width: 700px;
-  height: 800px;
-  margin: auto;
- 
+  height: 100vh;
+  margin:auto;
+  margin-bottom: 0px;
+  
 }
 .question-4, .question-4-submitted{
   background-image: url('/images/beijing-image.jpg');
-  background-size: 100%;
+  background-size: 700px 900px;
   background-repeat: no-repeat;
-  width: 700px;
-  height: 800px;
-  margin: auto;
+  height: 100vh;
+  margin:auto;
+  margin-bottom: 0px;
 }
 h1 {
   font-size:30px;
@@ -83,7 +92,17 @@ p{
   text-align:center;
 }
 .result-message, .score {
-  color:#fff;
+  background-color: #fff;
+  border: solid;
+}
+.result-message {
+  width: 300px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.score{
+  width: 200px;
+  margin:auto;
 }
 .start-button{
   text-align: center;
@@ -132,7 +151,7 @@ font-size: 13px;
 }
 
 
-@media all and (min-width: 800px){
+@media all and (min-width: 700px){
 
   header{
     margin-bottom: 30px;
@@ -160,6 +179,58 @@ font-size: 13px;
   }
   .radio {
     font-size: 17px;
+  }
+  section{
+    background-image: url('/images/travel-default.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin:auto;
+    margin-bottom: 0px;
+  }
+  .question-0, .question-0-submitted {
+
+    background-image: url('/images/paris-image.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin:auto;
+    margin-bottom: 0px;
+  }
+  .question-1, .question-1-submitted{
+    background-image: url('/images/moscow-image.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin:auto;
+    margin-bottom: 0px;
+    
+  }
+  .question-2, .question-2-submitted{
+    background-image: url('/images/barcelona-image.jpg');
+    background-size: 100vh;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin:auto;
+    margin-bottom: 0px;
+    
+  }
+  .question-3, .question-3-submitted{
+    background-image: url('/images/buenos-aires-image.jpg');
+    background-size: 100vh;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin:auto;
+    margin-bottom: 0px;
+    
+  }
+  .question-4, .question-4-submitted{
+    background-image: url('/images/beijing-image.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin:auto;
+    margin-bottom: 0px;
   }
 }
 .start-button{
