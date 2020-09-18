@@ -223,10 +223,10 @@ function resultsTemplate() {
   <header>
     <h1>Your Results!</h1>
   </header>
-  <div class="text-box">
-    <div class="score">
+  <div class="score">
       <h2>${finalScore}/5 Correct</h2>
     </div>
+  <div class="text-box">
     <div>
       <p>${finalMessage}</p>
     </div>

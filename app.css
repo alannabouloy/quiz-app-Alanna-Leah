@@ -103,6 +103,7 @@ p{
 .score{
   width: 200px;
   margin:auto;
+  margin-bottom: 10px;
 }
 .start-button{
   text-align: center;
