@@ -182,7 +182,7 @@ function answerTemplate(questionNum, answerResult, currentScore) {
   //question answer html
   let answerPage = `<section class="question-${questionNum}-submitted">
   <header>
-    <h1>Question Number ${questionNum + 1} / 5</h1>
+    <h1>Question ${questionNum + 1} / 5</h1>
   </header>
   <main>
     <div class="result-message">

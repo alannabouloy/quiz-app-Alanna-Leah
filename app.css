@@ -61,12 +61,14 @@ ul{
 
  li{
    margin: 0 0 20px 0;
+   font-size: 12px;
  }
 
 
 .radio{
 margin: 15px;
 text-align: left;
+font-size: 13px;
 }
 
 
@@ -74,10 +76,10 @@ text-align: left;
 
   border: solid;
   font-size: 15px;
-  width: 100%;
   height: 300px;
   text-align: center;
   background-color: #fff;
+  margin: auto;
 }
 
 .intro .question .question-submitted{
@@ -94,7 +96,8 @@ text-align: left;
   h1{
     display:flex;
     width: 500px;
-    margin: auto;
+    margin-top: 120px;
+    justify-content: center;
   }
   .text-box{
     width: 500px;
@@ -103,6 +106,15 @@ text-align: left;
   }
   p{
     text-align: center;
+    font-size: 17px;
+    font-weight: bolder;
+    padding-bottom: 10px;;
+  }
+  li{
+    font-size: 15px;;
+  }
+  .radio {
+    font-size: 17px;
   }
 }
 .start-button{
