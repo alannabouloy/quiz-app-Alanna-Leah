@@ -19,10 +19,11 @@ header{
 }
 
 main{
-  margin: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 section{
-  background-image: url('/images/travel-default.jpg');
+  background-image: url('images/travel-default.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -33,7 +34,7 @@ section{
 
 .question-0, .question-0-submitted {
 
-  background-image: url('/images/paris-image.jpg');
+  background-image: url('images/paris-image.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -42,7 +43,7 @@ section{
   
 }
 .question-1, .question-1-submitted{
-  background-image: url('/images/moscow-image.jpg');
+  background-image: url('images/moscow-image.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -51,7 +52,7 @@ section{
   
 }
 .question-2, .question-2-submitted{
-  background-image: url('/images/barcelona-image.jpg');
+  background-image: url('images/barcelona-image.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -60,7 +61,7 @@ section{
   
 }
 .question-3, .question-3-submitted{
-  background-image: url('/images/buenos-aires-image.jpg');
+  background-image: url('images/buenos-aires-image.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -69,7 +70,7 @@ section{
   
 }
 .question-4, .question-4-submitted{
-  background-image: url('/images/beijing-image.jpg');
+  background-image: url('images/beijing-image.jpg');
   background-size: 700px 900px;
   background-repeat: no-repeat;
   height: 100vh;
@@ -77,16 +78,16 @@ section{
   margin-bottom: 0px;
 }
 h1 {
-  font-size:30px;
+  font-size:25px;
   display: flex;
   border: solid;
-  padding: 10px;
+
   text-align: center;
   background-color: #fff;
 }
 
 h2{
-  font-size: 20px;
+  font-size: 15px;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -98,12 +99,12 @@ p{
   border: solid;
 }
 
+.score{
+  margin-bottom: -5px;
+}
+
 .result-message {
   margin: auto;
-  margin-bottom: 20px;
-}
-.score{
-  margin:auto;
   margin-bottom: 10px;
 }
 .start-button{
@@ -152,6 +153,19 @@ font-size: 13px;
   text-align: center;
 }
 
+.start-button{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+
 
 @media all and (min-width: 700px){
 
@@ -189,8 +203,14 @@ font-size: 13px;
   .radio {
     font-size: 17px;
   }
+
+  .score{
+    width: 500px;
+    margin: auto;
+    margin-bottom: 30px;
+  }
   section{
-    background-image: url('/images/travel-default.jpg');
+    background-image: url('images/travel-default.jpg');
     background-size: 700px 800px;
     background-repeat: no-repeat;
     width:700px;
@@ -200,7 +220,7 @@ font-size: 13px;
   }
   .question-0, .question-0-submitted {
 
-    background-image: url('/images/paris-image.jpg');
+    background-image: url('images/paris-image.jpg');
     background-size: 700px 800px;
     background-repeat: no-repeat;
     width:700px;
@@ -209,7 +229,7 @@ font-size: 13px;
     margin-bottom: 0px;
   }
   .question-1, .question-1-submitted{
-    background-image: url('/images/moscow-image.jpg');
+    background-image: url('images/moscow-image.jpg');
     background-size: 700px 800px;
     background-repeat: no-repeat;
     width:700px;
@@ -219,7 +239,7 @@ font-size: 13px;
     
   }
   .question-2, .question-2-submitted{
-    background-image: url('/images/barcelona-image.jpg');
+    background-image: url('images/barcelona-image.jpg');
     background-size: 700px 800px;
     background-repeat: no-repeat;
     width:700px;
@@ -229,7 +249,7 @@ font-size: 13px;
     
   }
   .question-3, .question-3-submitted{
-    background-image: url('/images/buenos-aires-image.jpg');
+    background-image: url('images/buenos-aires-image.jpg');
     background-size: 700px 800px;
     background-repeat: no-repeat;
     width:700px;
@@ -238,7 +258,7 @@ font-size: 13px;
     margin-bottom: 0px;
   }
   .question-4, .question-4-submitted{
-    background-image: url('/images/beijing-image.jpg');
+    background-image: url('images/beijing-image.jpg');
     background-size: 700px 800px;
     background-repeat: no-repeat;
     width:700px;
@@ -246,13 +266,4 @@ font-size: 13px;
     margin:auto;
     margin-bottom: 0px;
   }
-}
-.start-button{
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.button{
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
