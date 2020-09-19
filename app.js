@@ -224,6 +224,7 @@ function resultsTemplate() {
   <header>
     <h1>Your Results!</h1>
   </header>
+  <main>
   <div class="score">
       <h2>${finalScore}/5 Correct</h2>
     </div>
@@ -237,6 +238,7 @@ function resultsTemplate() {
       </form>
     </div>
   </div>
+  </main>
 </section>`;
   console.log('resultsTemplate ran, returned resultsPage');
   return resultsPage;
