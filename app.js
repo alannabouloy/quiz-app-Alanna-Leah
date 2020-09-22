@@ -92,11 +92,7 @@ const store = {
 
 // These functions return HTML templates
 function introTemplate() {
-  let introPage = `<section class="intro">
-  <header>
-    <h1 class="heading">Fun Fact Travel Quiz</h1>
-  </header>
-  <main>
+  let introPage = `
     <div class="text-box">
       <p>One of the best parts of travel is getting to learn fun facts about the places you visit. Take our quiz and select the fun fact that you think goes with each city. Let's see what you know! </p>
     </div>
@@ -106,21 +102,14 @@ function introTemplate() {
           <button id="js-start-button">Start Quiz!</button>
         </div>
       </form>
-    </div>
-  </main>
-</section>`;
+    </div>`;
   //html for intro page
   console.log('introTemplate ran: returned introPage');
   return introPage;
 }
 
 function questionTemplate(questionNum) {
-  let questionPage = `<div class="question-${questionNum}">
-<header>
-  <h1 class="heading">Question ${questionNum + 1} / 5 </h1>
-</header>
-<main>
-  <div>
+  let questionPage = ` <div>
     <form id="js-question-form">
       <div class="text-box">
         <p>${store.questions[questionNum].question}</p>
@@ -170,9 +159,7 @@ function questionTemplate(questionNum) {
     <div class="score">
       <p>Current Score: ${getScore()}/ 5</p>
     </div>
-  </div>
-</main>
-</div>`;
+  </div>`;
   //question page html
   console.log('questionTemplate ran: returned questionPage');
   return questionPage;
@@ -181,11 +168,7 @@ function questionTemplate(questionNum) {
 
 function answerTemplate(questionNum, answerResult, currentScore) {
   //question answer html
-  let answerPage = `<section class="question-${questionNum}-submitted">
-  <header>
-    <h1>Question ${questionNum + 1} / 5</h1>
-  </header>
-  <main>
+  let answerPage = `
     <div class="result-message">
     <h2>You got that question ${answerResult}!</h2>
     </div>
@@ -209,9 +192,7 @@ function answerTemplate(questionNum, answerResult, currentScore) {
       <div class="score">
         <p>Current Score: ${currentScore} / 5</p>
       </div>
-    </div>
-  </main>
-</section>`;
+    </div>`;
   console.log('submittedQuestionTemplate ran, returned answerPage');
   return answerPage;
 }
@@ -220,11 +201,7 @@ function resultsTemplate() {
   //results html
   let finalScore = getScore();
   let finalMessage = createFinalMessage();
-  let resultsPage = `<section class="results">
-  <header>
-    <h1>Your Results!</h1>
-  </header>
-  <main>
+  let resultsPage = `
   <div class="score">
       <h2>${finalScore}/5 Correct</h2>
     </div>
@@ -237,9 +214,7 @@ function resultsTemplate() {
         <button id="js-try-again-button">Try Again!</button>
       </form>
     </div>
-  </div>
-  </main>
-</section>`;
+  </div>`;
   console.log('resultsTemplate ran, returned resultsPage');
   return resultsPage;
 }
@@ -254,16 +229,22 @@ function render(){
 
   //check if quiz has been started
   if(!store.quizStarted){
-    $('body').html(introTemplate);
+    changeClass('intro', 'results');
+    $('header').html('<h1>Fun Fact Travel Quiz</h1>');
+    $('main').html(introTemplate);
     console.log('rendered Intro Page');
   }else{
     if(store.finalQuestion){
-      $('body').html(resultsTemplate());
+      changeClass('results', `question-${questionNum}`);
+      $('header').html('<h1>Your Results!</h1>');
+      $('main').html(resultsTemplate());
     }else{
+      changeClass(`question-${questionNum}`, `question-${questionNum - 1}`, 'intro');
+      $('header').html(`<h1>Question ${questionNum + 1}/5</h1>`);
       if(store.questions[questionNum].submitted){
-        $('body').html(answerTemplate(questionNum,answeredCorrect,score));
+        $('main').html(answerTemplate(questionNum,answeredCorrect,score));
       }else{
-        $('body').html(questionTemplate(questionNum));
+        $('main').html(questionTemplate(questionNum));
       }
     }
   }
@@ -299,6 +280,15 @@ function checkAnswer(questionNum, answer) {
   //return true or false
     
 }
+function changeClass(addClass, removeClass, removeClass2){
+  if(removeClass2){
+    $('body').removeClass(removeClass).removeClass(removeClass2).addClass(addClass);
+  }else{
+    $('body').removeClass(removeClass).addClass(addClass);
+  }
+  console.log('Class changed')
+}
+
 function recordResult(questionNum, isCorrect){
   store.questions[questionNum].answerResult = isCorrect;
 }
