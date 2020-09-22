@@ -22,7 +22,7 @@ main{
   margin-left: 20px;
   margin-right: 20px;
 }
-section{
+.intro, .results{
   background-image: url('images/travel-default.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -209,60 +209,47 @@ font-size: 13px;
     margin: auto;
     margin-bottom: 30px;
   }
-  section{
+  .results, .intro{
     background-image: url('images/travel-default.jpg');
-    background-size: 700px 800px;
+    background-size:100%;
     background-repeat: no-repeat;
-    width:700px;
-    height: 800px;
     margin:auto;
     margin-bottom: 0px;
   }
   .question-0, .question-0-submitted {
 
     background-image: url('images/paris-image.jpg');
-    background-size: 700px 800px;
+    background-size: 100%;
     background-repeat: no-repeat;
-    width:700px;
-    height: 800px;
     margin:auto;
     margin-bottom: 0px;
   }
   .question-1, .question-1-submitted{
     background-image: url('images/moscow-image.jpg');
-    background-size: 700px 800px;
+    background-size:100%;
     background-repeat: no-repeat;
-    width:700px;
-    height: 800px;
     margin:auto;
     margin-bottom: 0px;
-    
   }
   .question-2, .question-2-submitted{
     background-image: url('images/barcelona-image.jpg');
-    background-size: 700px 800px;
+    background-size:100%;
     background-repeat: no-repeat;
-    width:700px;
-    height: 800px;
     margin:auto;
     margin-bottom: 0px;
     
   }
   .question-3, .question-3-submitted{
     background-image: url('images/buenos-aires-image.jpg');
-    background-size: 700px 800px;
+    background-size:100%;
     background-repeat: no-repeat;
-    width:700px;
-    height: 800px;
     margin:auto;
     margin-bottom: 0px;
   }
   .question-4, .question-4-submitted{
     background-image: url('images/beijing-image.jpg');
-    background-size: 700px 800px;
+    background-size:100%;
     background-repeat: no-repeat;
-    width:700px;
-    height: 800px;
     margin:auto;
     margin-bottom: 0px;
   }
